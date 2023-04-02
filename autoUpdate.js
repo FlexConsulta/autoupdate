@@ -1,5 +1,5 @@
 import cron from "node-cron";
-import { simpleGit } from "simple-git";
+import { simpleGit, CleanOptions } from "simple-git";
 
 const options = {
   baseDir: process.cwd(),
@@ -9,8 +9,10 @@ const options = {
 };
 
 // Define o repositório e o intervalo de atualização
-const repo = simpleGit("https://github.com/anaelj/autoupdate", options);
-const intervaloAtualizacao = "*/1 * * * *"; // atualiza a cada 1 minuto
+const repo = simpleGit("https://github.com/anaelj/autoupdate", options).clean(
+  CleanOptions.FORCE
+);
+const intervaloAtualizacao = "*/1 * * * *"; // atualiza a cada 2 minutos
 
 // Define a tarefa de atualização
 export const tarefaAtualizacao = cron.schedule(intervaloAtualizacao, () => {
