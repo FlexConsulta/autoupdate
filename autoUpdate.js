@@ -17,7 +17,7 @@ export const tarefaAtualizacao = cron.schedule(intervaloAtualizacao, () => {
   console.log("Verificando atualizações...");
   repo.pull((err, atualizacao) => {
     if (atualizacao && atualizacao.summary.changes) {
-      console.log(`Atualizado para a versão ${atualizacao.summary.changes}!`);
+      console.log(`Atualizado!`);
     } else {
       console.log("Nenhuma atualização disponível.");
     }
