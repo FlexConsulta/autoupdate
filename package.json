@@ -1,0 +1,12 @@
+{
+  "name": "autoupdate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:anaelj/autoupdate.git",
+  "author": "Anael Medeiros <anael.medeiros@CTNAPPLE71P6QCM.local>",
+  "license": "MIT",
+  "dependencies": {
+    "node-cron": "^3.0.2",
+    "simple-git": "^3.17.0"
+  }
+}
