@@ -11,7 +11,7 @@ const options = {
 const repo = simpleGit("https://github.com/anaelj/autoupdate", options).clean(
   CleanOptions.FORCE
 );
-const intervaloAtualizacao = "*/5 * * * *"; // atualiza a cada 5 minutos
+const intervaloAtualizacao = "*/1 * * * *"; // atualiza a cada 5 minutos
 
 export const tarefaAtualizacao = cron.schedule(intervaloAtualizacao, () => {
   console.log("Verificando atualizações...");
